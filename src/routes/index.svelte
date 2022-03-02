@@ -7,6 +7,10 @@
 	let string = generateRandomString(stringLength);
 </script>
 
+<svelte:head>
+	<title>Random String Generator</title>
+</svelte:head>
+
 <div class="grid gap-y-8">
 	<h1 class="text-3xl font-bold underline">Random String Generator</h1>
 	<form>
