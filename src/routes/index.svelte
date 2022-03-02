@@ -26,7 +26,7 @@
 	/>
 </form>
 <button
-	class="my-4 py-4 px-8 border-2 border-dashed bg-gray-50 max-w-lg break-all text-left"
+	class="font-mono my-4 py-4 px-8 border-2 border-dashed bg-gray-50 max-w-lg break-all text-left"
 	on:click={(e) => {
 		if (window.getSelection) {
 			const range = document.createRange();
