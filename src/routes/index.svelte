@@ -1,15 +1,10 @@
 <script>
 	import { page } from '$app/stores';
+	import { generateRandomString } from '../functions/generateRandomString';
 
-	function generateString(stringlength) {
-		return Array.from(Array(Math.min(stringlength, 1024)), () =>
-			Math.floor(Math.random() * 36).toString(36)
-		).join('');
-	}
-
-	const initialStringLength = parseInt($page.url.searchParams.get('stringlength')) || 32;
-	let stringlength = initialStringLength;
-	let string = generateString(stringlength);
+	const initialStringLength = parseInt($page.url.searchParams.get('stringLength')) || 32;
+	let stringLength = initialStringLength;
+	let string = generateRandomString(stringLength);
 </script>
 
 <div class="grid gap-y-8">
@@ -20,8 +15,8 @@
 			type="number"
 			id="stringlength"
 			name="stringlength"
-			bind:value={stringlength}
-			on:keyup={() => (string = generateString(stringlength))}
+			bind:value={stringLength}
+			on:keyup={() => (string = generateRandomString(stringLength))}
 			min="1"
 			max="1024"
 		/>
@@ -44,7 +39,7 @@
 
 		<div>
 			<button
-				on:click={() => (string = generateString(stringlength))}
+				on:click={() => (string = generateRandomString(stringLength))}
 				type="button"
 				class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
 			>
@@ -53,9 +48,9 @@
 		</div>
 	</div>
 
-	{#if stringlength > 1024}
+	{#if stringLength > 1024}
 		<p class="py-2 px-4 bg-red-200 border border-red-600 text-red-800 max-w-lg">
-			Max string length is 1024, you provided a length of {stringlength}
+			Max string length is 1024, you provided a length of {stringLength}
 		</p>
 	{/if}
 
@@ -63,8 +58,12 @@
 		<p>
 			Heads up:<br />
 			You can use
-			<a href="/?stringlength={stringlength}">?stringlength=<strong>{stringlength}</strong></a> in the
+			<a href="/?stringLength={stringLength}">?stringLength=<strong>{stringLength}</strong></a> in the
 			URL to set the string length.
+		</p>
+		<p>
+			You can also link directly to a random string:
+			<a href="/{stringLength}"><strong>/{stringLength}</strong></a>.
 		</p>
 	</div>
 </div>
