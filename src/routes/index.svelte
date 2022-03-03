@@ -13,12 +13,12 @@
 
 <div class="grid gap-y-8">
 	<h1 class="text-3xl font-bold underline">Random String Generator</h1>
-	<form>
-		<label for="stringlength">String Length</label>
+	<form action="/" method="GET">
+		<label for="stringLength">String Length</label>
 		<input
 			type="number"
-			id="stringlength"
-			name="stringlength"
+			id="stringLength"
+			name="stringLength"
 			bind:value={stringLength}
 			on:keyup={() => (string = generateRandomString(stringLength))}
 			min="1"
