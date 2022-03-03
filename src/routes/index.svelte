@@ -67,7 +67,7 @@
 		</p>
 		<p>
 			You can also link directly to a random string:
-			<a href="/{stringLength}"><strong>/{stringLength}</strong></a>.
+			<a rel="external" href="/{stringLength}"><strong>/{stringLength}</strong></a>.
 		</p>
 	</div>
 
