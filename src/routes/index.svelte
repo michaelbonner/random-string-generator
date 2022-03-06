@@ -1,5 +1,6 @@
 <script>
 	import { page } from '$app/stores';
+	import { classNames } from '../functions/classNames';
 	import { generateRandomString } from '../functions/generateRandomString';
 
 	const initialStringLength = parseInt($page.url.searchParams.get('stringLength')) || 32;
@@ -11,11 +12,12 @@
 	<title>Random String Generator</title>
 </svelte:head>
 
-<div class="grid gap-y-8 prose max-w-xl">
-	<h1>Random String Generator</h1>
-	<form action="/" method="GET">
+<div class="grid gap-y-8 prose dark:prose-invert max-w-xl dark:text-gray-100">
+	<h1 class="dark:text-gray-100">Random String Generator</h1>
+	<form action="/" class="flex gap-x-4 items-center" method="GET">
 		<label for="stringLength">String Length</label>
 		<input
+			class="dark:bg-transparent dark:border-gray-600"
 			type="number"
 			id="stringLength"
 			name="stringLength"
@@ -27,7 +29,10 @@
 	</form>
 	<div>
 		<button
-			class="font-mono my-4 py-4 px-8 border-2 border-dashed bg-gray-50 break-all text-left"
+			class={classNames(
+				`font-mono my-4 py-4 px-8 border-2 border-dashed bg-gray-50 break-all text-left`,
+				`dark:border-gray-600 dark:bg-gray-800`
+			)}
 			on:click={(e) => {
 				if (window.getSelection) {
 					const range = document.createRange();
@@ -58,7 +63,12 @@
 		</p>
 	{/if}
 
-	<div class="bg-gray-50 py-4 px-8 border border-gray-200">
+	<div
+		class={classNames(
+			`bg-gray-50 py-4 px-8 border border-gray-200`,
+			`dark:bg-gray-900 dark:border-gray-600`
+		)}
+	>
 		<p>
 			Heads up:<br />
 			You can use
