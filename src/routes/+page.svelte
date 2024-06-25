@@ -10,6 +10,11 @@
 
 <svelte:head>
 	<title>Random String Generator</title>
+	<meta
+		name="description"
+		content="Generate a random string of characters. Can be helpful to generate random encryption keys."
+	/>
+	<link rel="canonical" href="https://random-string-generator.michaelbonner.dev/" />
 </svelte:head>
 
 <div class="grid gap-y-8 prose dark:prose-invert max-w-xl dark:text-gray-100">
