@@ -12,7 +12,7 @@
 	<title>Random String Generator</title>
 	<meta
 		name="description"
-		content="Generate a random string of characters. Can be helpful to generate random encryption keys."
+		content="I got tired of Googling for a site and getting a bunch of cruft I don't need when trying to generate a random string, so I built a dead simple replacement."
 	/>
 	<link rel="canonical" href="https://random-string-generator.michaelbonner.dev/" />
 	<meta name="color-scheme" content="dark light" />
