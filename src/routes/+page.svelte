@@ -15,6 +15,8 @@
 		content="Generate a random string of characters. Can be helpful to generate random encryption keys."
 	/>
 	<link rel="canonical" href="https://random-string-generator.michaelbonner.dev/" />
+	<meta name="color-scheme" content="dark light" />
+	<meta name="theme-color" content="#5046e4" />
 </svelte:head>
 
 <div class="grid gap-y-8 prose dark:prose-invert max-w-xl dark:text-gray-100">
