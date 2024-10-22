@@ -4,8 +4,8 @@
 	import { generateRandomString } from '../functions/generateRandomString';
 
 	const initialStringLength = parseInt($page.url.searchParams.get('stringLength')) || 32;
-	let stringLength = initialStringLength;
-	let string = generateRandomString(stringLength);
+	let stringLength = $state(initialStringLength);
+	let string = $state(generateRandomString(stringLength));
 </script>
 
 <svelte:head>
@@ -29,7 +29,7 @@
 			id="stringLength"
 			name="stringLength"
 			bind:value={stringLength}
-			on:keyup={() => (string = generateRandomString(stringLength))}
+			onkeyup={() => (string = generateRandomString(stringLength))}
 			min="1"
 			max="1024"
 		/>
@@ -40,7 +40,7 @@
 				`font-mono my-4 py-4 px-8 border-2 border-dashed bg-gray-50 break-all text-left`,
 				`dark:border-gray-600 dark:bg-gray-800`
 			)}
-			on:click={(e) => {
+			onclick={(e) => {
 				if (window.getSelection) {
 					const range = document.createRange();
 					range.selectNode(e.currentTarget);
@@ -55,7 +55,7 @@
 
 		<div>
 			<button
-				on:click={() => (string = generateRandomString(stringLength))}
+				onclick={() => (string = generateRandomString(stringLength))}
 				type="button"
 				class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
 			>
