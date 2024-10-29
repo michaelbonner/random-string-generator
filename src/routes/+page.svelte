@@ -19,7 +19,7 @@
 	<meta name="theme-color" content="#5046e4" />
 </svelte:head>
 
-<div class="grid gap-y-8 prose dark:prose-invert max-w-xl dark:text-gray-100">
+<div class="grid gap-y-8 max-w-xl dark:text-gray-100 prose dark:prose-invert">
 	<h1 class="dark:text-gray-100">Random String Generator</h1>
 	<form action="/" class="flex gap-x-4 items-center" method="GET">
 		<label for="stringLength">String Length</label>
@@ -57,7 +57,7 @@
 			<button
 				onclick={() => (string = generateRandomString(stringLength))}
 				type="button"
-				class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+				class="inline-flex items-center py-2 px-4 text-sm font-medium text-white bg-indigo-600 rounded-md border border-transparent shadow-sm hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:outline-none"
 			>
 				Regenerate
 			</button>
@@ -65,7 +65,7 @@
 	</div>
 
 	{#if stringLength > 1024}
-		<p class="py-2 px-4 bg-red-200 border border-red-600 text-red-800">
+		<p class="py-2 px-4 text-red-800 bg-red-200 border border-red-600">
 			Max string length is 1024, you provided a length of {stringLength}
 		</p>
 	{/if}
@@ -91,7 +91,7 @@
 	<div class="flex gap-8">
 		<p>
 			<a
-				class="flex gap-x-2 items-center hover:text-indigo-700 transition-all"
+				class="flex gap-x-2 items-center transition-all hover:text-indigo-700"
 				href="https://github.com/michaelbonner/random-string-generator"
 			>
 				<svg
@@ -112,12 +112,12 @@
 		</p>
 		<p>
 			<a
-				class="flex gap-x-2 items-center hover:text-indigo-700 transition-all"
+				class="flex gap-x-2 items-center transition-all hover:text-indigo-700"
 				href="https://michaelbonner.dev?utm_source=random-string-generator"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
-					class="h-5 w-5"
+					class="w-5 h-5"
 					viewBox="0 0 20 20"
 					fill="currentColor"
 				>
